@@ -1,0 +1,13 @@
+# macOS system files
+.DS_Store
+
+# optional: other common ignores
+*.swp
+*.swo
+*.swn
+*.bak
+*.tmp
+*.log
+
+# LuaSnip compiled snippets cache
+luasnip_snippets/
