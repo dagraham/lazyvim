@@ -20,3 +20,5 @@ vim.keymap.set({ "i", "s" }, "<C-p>", function()
     ls.jump(-1)
   end
 end, { silent = true, desc = "Jump backward in snippet" })
+
+vim.keymap.set("n", "<leader>o", "<cmd>AerialToggle<CR>", { desc = "Toggle Aerial outline" })
