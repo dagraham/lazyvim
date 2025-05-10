@@ -1,5 +1,6 @@
 # macOS system files
 .DS_Store
+lazy-lock.json
 
 # optional: other common ignores
 *.swp
@@ -8,6 +9,7 @@
 *.bak
 *.tmp
 *.log
+
 
 # LuaSnip compiled snippets cache
 luasnip_snippets/
