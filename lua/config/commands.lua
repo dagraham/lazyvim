@@ -1,16 +1,17 @@
-vim.api.nvim_create_user_command("Doit", function(opts)
-  local arg = opts.args
-  if arg == "" then
-    print("Usage: Doit +/-N<command> (e.g. +3d)")
-    return
-  end
-
-  local cmd = ":" .. "." .. arg
-  vim.cmd("normal! m'") -- save cursor position to mark '
-  vim.cmd(cmd)
-  vim.cmd("normal! `'")
-end, { nargs = 1 })
+-- vim.api.nvim_create_user_command("Doit", function(opts)
+--   local arg = opts.args
+--   if arg == "" then
+--     print("Usage: Doit +/-N<command> (e.g. +3d)")
+--     return
+--   end
+--
+--   local cmd = ":" .. "." .. arg
+--   vim.cmd("normal! m'") -- save cursor position to mark '
+--   vim.cmd(cmd)
+--   vim.cmd("normal! `'")
+-- end, { nargs = 1 })
 -- Lowercase "doit" fallback as Lua function for user convenience
-_G.doit = function(arg)
-  vim.cmd("Doit " .. arg)
-end
+-- _G.doit = function(arg)
+--   vim.cmd("Doit " .. arg)
+-- end
+return {}

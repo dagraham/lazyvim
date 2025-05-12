@@ -41,6 +41,44 @@ require("lazy").setup({
     { "williamboman/mason-lspconfig.nvim", version = "1.29.0" },
     { "tpope/vim-fugitive" },
     { "kdheepak/lazygit.nvim" },
+    -- 🧩 Mini plugins
+    {
+      -- mini.files: lightweight file explorer
+      "echasnovski/mini.files",
+      version = false,
+      keys = {
+        {
+          "<leader>fm",
+          function()
+            require("mini.files").open(vim.api.nvim_buf_get_name(0), true)
+          end,
+          desc = "MiniFiles (directory of current file)",
+        },
+      },
+      config = function()
+        require("mini.files").setup()
+      end,
+    },
+
+    {
+      -- mini.move: intuitive line and block movement
+      "echasnovski/mini.move",
+      version = false,
+      config = function()
+        require("mini.move").setup({
+          mappings = {
+            left = "<M-h>",
+            right = "<M-l>",
+            down = "<M-j>",
+            up = "<M-k>",
+            line_left = "<M-h>",
+            line_right = "<M-l>",
+            line_down = "<M-j>",
+            line_up = "<M-k>",
+          },
+        })
+      end,
+    },
     -- {
     --   "iamcco/markdown-preview.nvim",
     --   cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
