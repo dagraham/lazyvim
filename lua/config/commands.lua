@@ -14,4 +14,5 @@
 -- _G.doit = function(arg)
 --   vim.cmd("Doit " .. arg)
 -- end
+-- require("config.colors")
 return {}

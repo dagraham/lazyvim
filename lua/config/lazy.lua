@@ -38,6 +38,24 @@ require("lazy").setup({
       "LazyVim/LazyVim",
       opts = { colorscheme = "gruvbox" },
     },
+    {
+      "nvim-lualine/lualine.nvim",
+      opts = function(_, opts)
+        opts.options = {
+          theme = "gruvbox",
+          section_separators = "",
+          component_separators = "",
+        }
+        opts.sections = {
+          lualine_a = { "mode" },
+          lualine_b = { "branch" },
+          lualine_c = { { "filename", path = 1 } }, -- path=1 = relative
+          lualine_x = {},
+          lualine_y = { "progress" },
+          lualine_z = { "location" },
+        }
+      end,
+    },
     { "williamboman/mason-lspconfig.nvim", version = "1.29.0" },
     { "tpope/vim-fugitive" },
     { "kdheepak/lazygit.nvim" },
@@ -59,7 +77,11 @@ require("lazy").setup({
         require("mini.files").setup()
       end,
     },
-
+    -- {
+    --   "ellisonleao/glow.nvim",
+    --   cmd = { "Glow" },
+    --   config = true,
+    -- },
     {
       -- mini.move: intuitive line and block movement
       "echasnovski/mini.move",
@@ -133,6 +155,20 @@ require("lazy").setup({
         vim.keymap.set("n", "dd", "dd<cmd>AutolistRecalculate<cr>")
         vim.keymap.set("v", "d", "d<cmd>AutolistRecalculate<cr>")
       end,
+    },
+    {
+      "nvim-treesitter/nvim-treesitter",
+      opts = {
+        ensure_installed = {
+          "markdown",
+          "markdown_inline",
+          "python", -- make sure this is included
+        },
+        highlight = {
+          enable = true,
+          additional_vim_regex_highlighting = { "markdown" },
+        },
+      },
     },
   },
 
