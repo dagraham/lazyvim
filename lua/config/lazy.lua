@@ -101,34 +101,6 @@ require("lazy").setup({
         })
       end,
     },
-    -- {
-    --   "iamcco/markdown-preview.nvim",
-    --   cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    --   ft = { "markdown" },
-    -- },
-    -- {
-    --   "MeanderingProgrammer/render-markdown.nvim",
-    --   dependencies = {
-    --     "nvim-treesitter/nvim-treesitter",
-    --     "echasnovski/mini.nvim",
-    --     "nvim-tree/nvim-web-devicons", -- <-- Add this explicitly
-    --   },
-    --   opts = {},
-    -- },
-    -- {
-    --   "MeanderingProgrammer/render-markdown.nvim",
-    --   dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" },
-    --   opts = {
-    --     callout = {
-    --       note = {
-    --         raw = "[!NOTE]",
-    --         rendered = "󰋽 NOTE",
-    --         highlight = "RenderMarkdownInfo",
-    --         category = "github",
-    --       },
-    --     },
-    --   },
-    -- },
     {
       "MeanderingProgrammer/render-markdown.nvim",
       dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
