@@ -41,15 +41,23 @@ require("lazy").setup({
     {
       "nvim-lualine/lualine.nvim",
       opts = function(_, opts)
+        local gruvbox = require("lualine.themes.gruvbox")
+
+        -- override INSERT colors
+        gruvbox.insert.a.bg = "#ffff00"
+        gruvbox.insert.a.fg = "#000000"
+        gruvbox.insert.a.gui = "bold"
+
         opts.options = {
-          theme = "gruvbox",
+          theme = gruvbox,
           section_separators = "",
           component_separators = "",
         }
+
         opts.sections = {
           lualine_a = { "mode" },
           lualine_b = { "branch" },
-          lualine_c = { { "filename", path = 1 } }, -- path=1 = relative
+          lualine_c = { { "filename", path = 1 } },
           lualine_x = {},
           lualine_y = { "progress" },
           lualine_z = { "location" },
