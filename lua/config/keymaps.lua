@@ -306,6 +306,8 @@ end, { desc = "Convert bullet to a task or insert new task bullet" })
 --                           Folding section
 -------------------------------------------------------------------------------
 
+-- dag 2025-05-15 commented out "vim.cmd("edit!")" lines to avoid resetting wrap
+
 -- Checks each line to see if it matches a markdown heading (#, ##, etc.):
 -- It’s called implicitly by Neovim’s folding engine by vim.opt_local.foldexpr
 function _G.markdown_foldexpr()
