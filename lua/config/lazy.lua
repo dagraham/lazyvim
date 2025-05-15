@@ -119,10 +119,12 @@ require("lazy").setup({
       opts = {},
       config = function()
         require("render-markdown").setup({
-          -- heading = {
-          --   icons = { "󰼏 ", "󰎨 " },
-          --   position = "inline",
-          -- },
+          heading = {
+            --   icons = { "󰼏 ", "󰎨 " },
+            icons = { "󰎤 ", "󰎧 ", "󰎪 ", "󰎭 ", "󰎱 ", "󰎳 " },
+
+            --   position = "inline",
+          },
           latex = { enabled = false },
           callout = {
             note = {
