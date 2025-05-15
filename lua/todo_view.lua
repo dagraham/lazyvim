@@ -40,7 +40,7 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
 vim.opt.number = false
 vim.opt.relativenumber = false
 vim.opt.signcolumn = "no"
-vim.opt.textwidth = 30
+-- vim.opt.textwidth = 30
 vim.opt.linebreak = false
 vim.opt.wrap = false
 vim.opt.colorcolumn = ""
