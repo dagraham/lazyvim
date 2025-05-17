@@ -67,6 +67,7 @@ require("lazy").setup({
     { "williamboman/mason-lspconfig.nvim", version = "1.29.0" },
     { "tpope/vim-fugitive" },
     { "kdheepak/lazygit.nvim" },
+    { "echasnovski/mini.nvim", version = false },
     -- 🧩 Mini plugins
     {
       -- mini.files: lightweight file explorer
@@ -85,11 +86,6 @@ require("lazy").setup({
         require("mini.files").setup()
       end,
     },
-    -- {
-    --   "ellisonleao/glow.nvim",
-    --   cmd = { "Glow" },
-    --   config = true,
-    -- },
     {
       -- mini.move: intuitive line and block movement
       "echasnovski/mini.move",
@@ -107,60 +103,6 @@ require("lazy").setup({
             line_up = "<M-k>",
           },
         })
-      end,
-    },
-    -- {
-    --   "MeanderingProgrammer/render-markdown.nvim",
-    --   enabled = true,
-    --   dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
-    --   -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
-    --   -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
-    --   ---@module 'render-markdown'
-    --   ---@type render.md.UserConfig
-    --   opts = {},
-    --   config = function()
-    --     -- require("render-markdown").setup({
-    --     --   heading = {
-    --     --     --   icons = { "󰼏 ", "󰎨 " },
-    --     --     icons = { "󰎤 ", "󰎧 ", "󰎪 ", "󰎭 ", "󰎱 ", "󰎳 " },
-    --     --
-    --     --     --   position = "inline",
-    --     --   },
-    --     --   latex = { enabled = false },
-    --     -- })
-    --     require("render-markdown").setup({
-    --       heading = {
-    --         icons = { "󰎤 ", "󰎧 ", "󰎪 ", "󰎭 ", "󰎱 ", "󰎳 " },
-    --       },
-    --       latex = { enabled = false },
-    --       callouts = {
-    --         NOTE = { icon = "", hl = "DiagnosticInfo" },
-    --         WARNING = { icon = "", hl = "DiagnosticWarn" },
-    --         TIP = { icon = "💡", hl = "DiagnosticHint" },
-    --         IMPORTANT = { icon = "", hl = "DiagnosticError" },
-    --         INFO = { icon = "", hl = "DiagnosticHint" },
-    --       },
-    --     })
-    --   end,
-    -- },
-    {
-      "MeanderingProgrammer/render-markdown.nvim",
-      ft = "markdown", -- <-- this ensures it loads only for markdown files
-      dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
-      -- dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-web-devicons" },
-      opts = {
-        heading = {
-          icons = { "󰎤 ", "󰎧 ", "󰎪 ", "󰎭 ", "󰎱 ", "󰎳 " },
-        },
-        latex = { enabled = false },
-        callouts = {
-          NOTE = { icon = "", hl = "DiagnosticInfo" },
-          WARNING = { icon = "", hl = "DiagnosticWarn" },
-          TIP = { icon = "💡", hl = "DiagnosticHint" },
-        },
-      },
-      config = function(_, opts)
-        require("render-markdown").setup(opts)
       end,
     },
     {
@@ -181,20 +123,6 @@ require("lazy").setup({
         vim.keymap.set("v", "d", "d<cmd>AutolistRecalculate<cr>")
       end,
     },
-    -- {
-    --   "nvim-treesitter/nvim-treesitter",
-    --   opts = {
-    --     ensure_installed = {
-    --       "markdown",
-    --       "markdown_inline",
-    --       "python", -- make sure this is included
-    --     },
-    --     highlight = {
-    --       enable = true,
-    --       additional_vim_regex_highlighting = false,
-    --     },
-    --   },
-    -- },
     {
       "nvim-treesitter/nvim-treesitter",
       dependencies = {
@@ -215,12 +143,6 @@ require("lazy").setup({
         },
       },
     },
-    -- {
-    --   "nvim-treesitter/playground",
-    --   cmd = "TSPlaygroundToggle",
-    --   config = true,
-    -- },
-
     {
       "okuuva/auto-save.nvim",
       version = "^1.0.0", -- see https://devhints.io/semver, alternatively use '*' to use the latest tagged release
@@ -248,6 +170,24 @@ require("lazy").setup({
         -- your config goes here
         -- or just leave it empty :)
       },
+    },
+    {
+      "MeanderingProgrammer/render-markdown.nvim",
+      event = "BufReadPre",
+      dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
+      config = function()
+        require("render-markdown").setup({
+          heading = {
+            icons = { "󰎤 ", "󰎧 ", "󰎪 ", "󰎭 ", "󰎱 ", "󰎳 " },
+          },
+          latex = { enabled = false },
+          -- callouts = {
+          --   NOTE = { icon = "", hl = "DiagnosticInfo" },
+          --   TIP = { icon = "💡", hl = "DiagnosticHint" },
+          --   WARNING = { icon = "", hl = "DiagnosticWarn" },
+          -- },
+        })
+      end,
     },
   },
 
