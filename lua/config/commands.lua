@@ -116,7 +116,7 @@ if vim.g.todo_view == 1 then
         end
 
         -- Winbar with dynamic mode color group
-        vim.opt_local.winbar = "%#WinBarMode# %{v:lua.get_mode()} %*%#WinBarB# %t %*"
+        vim.opt_local.winbar = "%#WinBarMode# %{v:lua.get_mode()} %*%#WinBarB# %t %m %*"
 
         -- View options
         vim.opt_local.number = false

@@ -109,188 +109,58 @@ require("lazy").setup({
         })
       end,
     },
+    -- {
+    --   "MeanderingProgrammer/render-markdown.nvim",
+    --   enabled = true,
+    --   dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
+    --   -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
+    --   -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+    --   ---@module 'render-markdown'
+    --   ---@type render.md.UserConfig
+    --   opts = {},
+    --   config = function()
+    --     -- require("render-markdown").setup({
+    --     --   heading = {
+    --     --     --   icons = { "󰼏 ", "󰎨 " },
+    --     --     icons = { "󰎤 ", "󰎧 ", "󰎪 ", "󰎭 ", "󰎱 ", "󰎳 " },
+    --     --
+    --     --     --   position = "inline",
+    --     --   },
+    --     --   latex = { enabled = false },
+    --     -- })
+    --     require("render-markdown").setup({
+    --       heading = {
+    --         icons = { "󰎤 ", "󰎧 ", "󰎪 ", "󰎭 ", "󰎱 ", "󰎳 " },
+    --       },
+    --       latex = { enabled = false },
+    --       callouts = {
+    --         NOTE = { icon = "", hl = "DiagnosticInfo" },
+    --         WARNING = { icon = "", hl = "DiagnosticWarn" },
+    --         TIP = { icon = "💡", hl = "DiagnosticHint" },
+    --         IMPORTANT = { icon = "", hl = "DiagnosticError" },
+    --         INFO = { icon = "", hl = "DiagnosticHint" },
+    --       },
+    --     })
+    --   end,
+    -- },
     {
       "MeanderingProgrammer/render-markdown.nvim",
+      ft = "markdown", -- <-- this ensures it loads only for markdown files
       dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
-      -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
-      -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
-      ---@module 'render-markdown'
-      ---@type render.md.UserConfig
-      opts = {},
-      config = function()
-        require("render-markdown").setup({
-          heading = {
-            --   icons = { "󰼏 ", "󰎨 " },
-            icons = { "󰎤 ", "󰎧 ", "󰎪 ", "󰎭 ", "󰎱 ", "󰎳 " },
-
-            --   position = "inline",
-          },
-          latex = { enabled = false },
-          callout = {
-            note = {
-              raw = "[!NOTE]",
-              rendered = "󰋽 Note",
-              highlight = "RenderMarkdownInfo",
-              category = "github",
-            },
-            tip = {
-              raw = "[!TIP]",
-              rendered = "󰌶 Tip",
-              highlight = "RenderMarkdownSuccess",
-              category = "github",
-            },
-            important = {
-              raw = "[!IMPORTANT]",
-              rendered = "󰅾 Important",
-              highlight = "RenderMarkdownHint",
-              category = "github",
-            },
-            warning = {
-              raw = "[!WARNING]",
-              rendered = "󰀪 Warning",
-              highlight = "RenderMarkdownWarn",
-              category = "github",
-            },
-            caution = {
-              raw = "[!CAUTION]",
-              rendered = "󰳦 Caution",
-              highlight = "RenderMarkdownError",
-              category = "github",
-            },
-            abstract = {
-              raw = "[!ABSTRACT]",
-              rendered = "󰨸 Abstract",
-              highlight = "RenderMarkdownInfo",
-              category = "obsidian",
-            },
-            summary = {
-              raw = "[!SUMMARY]",
-              rendered = "󰨸 Summary",
-              highlight = "RenderMarkdownInfo",
-              category = "obsidian",
-            },
-            tldr = {
-              raw = "[!TLDR]",
-              rendered = "󰨸 Tldr",
-              highlight = "RenderMarkdownInfo",
-              category = "obsidian",
-            },
-            info = {
-              raw = "[!INFO]",
-              rendered = "󰋽 Info",
-              highlight = "RenderMarkdownInfo",
-              category = "obsidian",
-            },
-            todo = {
-              raw = "[!TODO]",
-              rendered = "󰗡 Todo",
-              highlight = "RenderMarkdownInfo",
-              category = "obsidian",
-            },
-            hint = {
-              raw = "[!HINT]",
-              rendered = "󰌶 Hint",
-              highlight = "RenderMarkdownSuccess",
-              category = "obsidian",
-            },
-            success = {
-              raw = "[!SUCCESS]",
-              rendered = "󰄬 Success",
-              highlight = "RenderMarkdownSuccess",
-              category = "obsidian",
-            },
-            check = {
-              raw = "[!CHECK]",
-              rendered = "󰄬 Check",
-              highlight = "RenderMarkdownSuccess",
-              category = "obsidian",
-            },
-            done = {
-              raw = "[!DONE]",
-              rendered = "󰄬 Done",
-              highlight = "RenderMarkdownSuccess",
-              category = "obsidian",
-            },
-            question = {
-              raw = "[!QUESTION]",
-              rendered = "󰘥 Question",
-              highlight = "RenderMarkdownWarn",
-              category = "obsidian",
-            },
-            help = {
-              raw = "[!HELP]",
-              rendered = "󰘥 Help",
-              highlight = "RenderMarkdownWarn",
-              category = "obsidian",
-            },
-            faq = {
-              raw = "[!FAQ]",
-              rendered = "󰘥 Faq",
-              highlight = "RenderMarkdownWarn",
-              category = "obsidian",
-            },
-            attention = {
-              raw = "[!ATTENTION]",
-              rendered = "󰀪 Attention",
-              highlight = "RenderMarkdownWarn",
-              category = "obsidian",
-            },
-            failure = {
-              raw = "[!FAILURE]",
-              rendered = "󰅖 Failure",
-              highlight = "RenderMarkdownError",
-              category = "obsidian",
-            },
-            fail = {
-              raw = "[!FAIL]",
-              rendered = "󰅖 Fail",
-              highlight = "RenderMarkdownError",
-              category = "obsidian",
-            },
-            missing = {
-              raw = "[!MISSING]",
-              rendered = "󰅖 Missing",
-              highlight = "RenderMarkdownError",
-              category = "obsidian",
-            },
-            danger = {
-              raw = "[!DANGER]",
-              rendered = "󱐌 Danger",
-              highlight = "RenderMarkdownError",
-              category = "obsidian",
-            },
-            error = {
-              raw = "[!ERROR]",
-              rendered = "󱐌 Error",
-              highlight = "RenderMarkdownError",
-              category = "obsidian",
-            },
-            bug = {
-              raw = "[!BUG]",
-              rendered = "󰨰 Bug",
-              highlight = "RenderMarkdownError",
-              category = "obsidian",
-            },
-            example = {
-              raw = "[!EXAMPLE]",
-              rendered = "󰉹 Example",
-              highlight = "RenderMarkdownHint",
-              category = "obsidian",
-            },
-            quote = {
-              raw = "[!QUOTE]",
-              rendered = "󱆨 Quote",
-              highlight = "RenderMarkdownQuote",
-              category = "obsidian",
-            },
-            cite = {
-              raw = "[!CITE]",
-              rendered = "󱆨 Cite",
-              highlight = "RenderMarkdownQuote",
-              category = "obsidian",
-            },
-          },
-        })
+      -- dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-web-devicons" },
+      opts = {
+        heading = {
+          icons = { "󰎤 ", "󰎧 ", "󰎪 ", "󰎭 ", "󰎱 ", "󰎳 " },
+        },
+        latex = { enabled = false },
+        callouts = {
+          NOTE = { icon = "", hl = "DiagnosticInfo" },
+          WARNING = { icon = "", hl = "DiagnosticWarn" },
+          TIP = { icon = "💡", hl = "DiagnosticHint" },
+        },
+      },
+      config = function(_, opts)
+        require("render-markdown").setup(opts)
       end,
     },
     {
@@ -311,18 +181,72 @@ require("lazy").setup({
         vim.keymap.set("v", "d", "d<cmd>AutolistRecalculate<cr>")
       end,
     },
+    -- {
+    --   "nvim-treesitter/nvim-treesitter",
+    --   opts = {
+    --     ensure_installed = {
+    --       "markdown",
+    --       "markdown_inline",
+    --       "python", -- make sure this is included
+    --     },
+    --     highlight = {
+    --       enable = true,
+    --       additional_vim_regex_highlighting = false,
+    --     },
+    --   },
+    -- },
     {
       "nvim-treesitter/nvim-treesitter",
+      dependencies = {
+        "nvim-treesitter/playground",
+      },
       opts = {
         ensure_installed = {
           "markdown",
           "markdown_inline",
-          "python", -- make sure this is included
+          "python",
         },
         highlight = {
           enable = true,
-          additional_vim_regex_highlighting = { "markdown" },
+          additional_vim_regex_highlighting = false,
         },
+        playground = {
+          enable = true,
+        },
+      },
+    },
+    -- {
+    --   "nvim-treesitter/playground",
+    --   cmd = "TSPlaygroundToggle",
+    --   config = true,
+    -- },
+
+    {
+      "okuuva/auto-save.nvim",
+      version = "^1.0.0", -- see https://devhints.io/semver, alternatively use '*' to use the latest tagged release
+      cmd = "ASToggle", -- optional for lazy loading on command
+      event = { "InsertLeave", "TextChanged" }, -- optional for lazy loading on trigger events
+      opts = {
+        enabled = true, -- start auto-save when the plugin is loaded (i.e. when your package manager loads it)
+        trigger_events = { -- See :h events
+          immediate_save = { "BufLeave", "FocusLost", "QuitPre", "VimSuspend" }, -- vim events that trigger an immediate save
+          defer_save = { "InsertLeave", "TextChanged" }, -- vim events that trigger a deferred save (saves after `debounce_delay`)
+          cancel_deferred_save = { "InsertEnter" }, -- vim events that cancel a pending deferred save
+        },
+        -- function that takes the buffer handle and determines whether to save the current buffer or not
+        -- return true: if buffer is ok to be saved
+        -- return false: if it's not ok to be saved
+        -- if set to `nil` then no specific condition is applied
+        condition = nil,
+        write_all_buffers = false, -- write all buffers when the current one meets `condition`
+        noautocmd = false, -- do not execute autocmds when saving
+        lockmarks = false, -- lock marks when saving, see `:h lockmarks` for more details
+        debounce_delay = 1000, -- delay after which a pending save is executed
+        -- log debug messages to 'auto-save.log' file in neovim cache directory, set to `true` to enable
+        debug = false,
+
+        -- your config goes here
+        -- or just leave it empty :)
       },
     },
   },
