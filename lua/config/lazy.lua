@@ -181,6 +181,7 @@ require("lazy").setup({
             icons = { "󰎤 ", "󰎧 ", "󰎪 ", "󰎭 ", "󰎱 ", "󰎳 " },
           },
           latex = { enabled = false },
+          -- NOTE: all the standard callouts are enabled by default
           -- callouts = {
           --   NOTE = { icon = "", hl = "DiagnosticInfo" },
           --   TIP = { icon = "💡", hl = "DiagnosticHint" },
