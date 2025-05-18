@@ -27,7 +27,7 @@ require("lazy").setup({
 
     -- language support
     { import = "lazyvim.plugins.extras.lang.json" },
-    -- NOTE TO FUTURE SELF:
+    -- NOTE: TO FUTURE SELF
     -- Do NOT enable { import = "lazyvim.plugins.extras.lang.markdown" }
     -- It conflicts with render-markdown.nvim and breaks the icons!
     -- { import = "lazyvim.plugins.extras.lang.markdown" },
