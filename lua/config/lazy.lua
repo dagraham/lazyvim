@@ -38,6 +38,23 @@ require("lazy").setup({
       "LazyVim/LazyVim",
       opts = { colorscheme = "gruvbox" },
     },
+    -- {
+    --   "andrewferrier/wrapping.nvim",
+    --   config = function()
+    --     require("wrapping").setup()
+    --   end,
+    -- },
+    {
+      "andrewferrier/wrapping.nvim",
+      config = function()
+        require("wrapping").setup()
+      end,
+      keys = {
+        { "<leader>tw", "<cmd>ToggleWrapMode<cr>", desc = "Toggle Wrap Mode" },
+        { "<leader>ts", "<cmd>SoftWrapMode<cr>", desc = "Soft Wrap Mode" },
+        { "<leader>th", "<cmd>HardWrapMode<cr>", desc = "Hard Wrap Mode" },
+      },
+    },
     {
       "nvim-lualine/lualine.nvim",
       opts = function(_, opts)
