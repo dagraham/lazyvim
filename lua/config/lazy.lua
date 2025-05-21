@@ -84,6 +84,13 @@ require("lazy").setup({
     { "williamboman/mason-lspconfig.nvim", version = "1.29.0" },
     { "tpope/vim-fugitive" },
     { "kdheepak/lazygit.nvim" },
+    {
+      "windwp/nvim-autopairs",
+      event = "InsertEnter",
+      config = true,
+      -- use opts = {} for passing setup options
+      -- this is equivalent to setup({}) function
+    },
     { "echasnovski/mini.nvim", version = false },
     -- 🧩 Mini plugins
     {
