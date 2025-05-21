@@ -1,15 +1,20 @@
-# macOS system files
-.DS_Store
+# Plugin metadata
 lazy-lock.json
+plugin/
+compiled/
+lua-package-path
+lua-path
 
-# optional: other common ignores
+# Session files
 *.swp
 *.swo
-*.swn
+
+# Misc
+.undo/
+
+# macOS metadata
+.DS_Store
+lua/**/.DS_Store
+
+# Backup files
 *.bak
-*.tmp
-*.log
-
-
-# LuaSnip compiled snippets cache
-luasnip_snippets/
