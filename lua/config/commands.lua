@@ -51,7 +51,8 @@ end, {
 vim.opt_local.isfname:append("@-@") -- allow @ and - in filenames
 vim.opt_local.includeexpr = "substitute(v:fname, '\\v^.+%((.+)%)$', '\\1', '')"
 
-if vim.g.todo_view == 1 then
+-- if vim.g.todo_view == 1 then
+if vim.g.minimal_view == 1 then
   vim.api.nvim_create_autocmd("VimEnter", {
     callback = function()
       vim.api.nvim_create_autocmd("ModeChanged", {
