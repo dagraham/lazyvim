@@ -54,6 +54,11 @@ end
 vim.keymap.set("n", "<leader>Z", ToggleAllFolds, { desc = "Toggle all folds" })
 vim.keymap.set("n", "<leader>z", "za", { desc = "Toggle fold under cursor" })
 
+--- For ChatGPT
+vim.keymap.set("n", "<leader>cg", "<cmd>ChatGPT<CR>", { desc = "ChatGPT UI" })
+vim.keymap.set("v", "<leader>ce", ":ChatGPTRun explain_code<CR>", { desc = "Explain Code" })
+vim.keymap.set("v", "<leader>co", ":ChatGPTRun optimize_code<CR>", { desc = "Optimize Code" })
+
 -- HACK: Manage Markdown tasks in Neovim similar to Obsidian | Telescope to List Completed and Pending Tasks
 -- https://youtu.be/59hvZl077hM
 --
