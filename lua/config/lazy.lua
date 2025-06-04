@@ -51,6 +51,11 @@ require("lazy").setup({
       "LazyVim/LazyVim",
       opts = { colorscheme = "gruvbox" },
     },
+
+    {
+      "sindrets/diffview.nvim",
+      dependencies = { "nvim-lua/plenary.nvim" },
+    },
     -- {
     --   "andrewferrier/wrapping.nvim",
     --   config = function()

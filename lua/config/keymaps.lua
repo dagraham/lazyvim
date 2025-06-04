@@ -59,6 +59,13 @@ vim.keymap.set("n", "<leader>cg", "<cmd>ChatGPT<CR>", { desc = "ChatGPT UI" })
 vim.keymap.set("v", "<leader>ce", ":ChatGPTRun explain_code<CR>", { desc = "Explain Code" })
 vim.keymap.set("v", "<leader>co", ":ChatGPTRun optimize_code<CR>", { desc = "Optimize Code" })
 
+-- In your keymap config, e.g., lua/config/keymaps.lua or as part of a Lazy plugin spec
+vim.keymap.set("n", "<leader>gz", ":DiffviewOpen<CR>", { desc = "Diff: Working tree vs HEAD" })
+vim.keymap.set("n", "<leader>gZ", ":DiffviewOpen master<CR>", { desc = "Diff: Working tree vs master" })
+vim.keymap.set("n", "<leader>gx", ":DiffviewFileHistory<CR>", { desc = "Diff: File History (project)" })
+vim.keymap.set("n", "<leader>gX", ":DiffviewFileHistory %<CR>", { desc = "Diff: File History (current file)" })
+vim.keymap.set("n", "<leader>gq", ":DiffviewClose<CR>", { desc = "Diff: Close diff view" })
+
 -- HACK: Manage Markdown tasks in Neovim similar to Obsidian | Telescope to List Completed and Pending Tasks
 -- https://youtu.be/59hvZl077hM
 --
