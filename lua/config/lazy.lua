@@ -24,19 +24,33 @@ require("lazy").setup({
 
     -- editor enhancements
     { import = "lazyvim.plugins.extras.editor.aerial" },
+    -- {
+    --   "jackMort/ChatGPT.nvim",
+    --   event = "VeryLazy",
+    --   dependencies = {
+    --     "MunifTanjim/nui.nvim",
+    --     "nvim-lua/plenary.nvim",
+    --     "nvim-telescope/telescope.nvim",
+    --   },
+    --   config = function()
+    --     require("chatgpt").setup({
+    --       api_key_cmd = "gpg --decrypt ~/.openai_api_key.gpg", -- or see .env option below
+    --     })
+    --   end,
+    -- },
+    -- Lazy
     {
       "jackMort/ChatGPT.nvim",
       event = "VeryLazy",
+      config = function()
+        require("chatgpt").setup()
+      end,
       dependencies = {
         "MunifTanjim/nui.nvim",
         "nvim-lua/plenary.nvim",
+        -- "folke/trouble.nvim", -- optional
         "nvim-telescope/telescope.nvim",
       },
-      config = function()
-        require("chatgpt").setup({
-          api_key_cmd = "gpg --decrypt ~/.openai_api_key.gpg", -- or see .env option below
-        })
-      end,
     },
     -- language support
     { import = "lazyvim.plugins.extras.lang.json" },
