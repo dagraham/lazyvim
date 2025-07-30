@@ -65,7 +65,7 @@ vim.keymap.set("n", "<leader>gZ", ":DiffviewOpen master<CR>", { desc = "Diff: Wo
 vim.keymap.set("n", "<leader>gx", ":DiffviewFileHistory<CR>", { desc = "Diff: File History (project)" })
 vim.keymap.set("n", "<leader>gX", ":DiffviewFileHistory %<CR>", { desc = "Diff: File History (current file)" })
 vim.keymap.set("n", "<leader>gq", ":DiffviewClose<CR>", { desc = "Diff: Close diff view" })
-vim.keymap.set("n", "<leader>ta", ":ASToggle<CR>", { desc = "Toggle auto save mode" })
+-- vim.keymap.set("n", "<leader>ta", ":ASToggle<CR>", { desc = "Toggle auto save mode" })
 
 -- HACK: Manage Markdown tasks in Neovim similar to Obsidian | Telescope to List Completed and Pending Tasks
 -- https://youtu.be/59hvZl077hM
