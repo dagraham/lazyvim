@@ -11,3 +11,4 @@ toml
 pastdue
 dayfirst
 yearfirst
+timedelta
