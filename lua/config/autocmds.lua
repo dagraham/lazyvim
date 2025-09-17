@@ -32,3 +32,10 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.wo.foldexpr = "v:lua.require'config.markdown_folds'.foldexpr()"
   end,
 })
+
+-- vim.api.nvim_create_autocmd("FileType", {
+--   pattern = "markdown",
+--   callback = function()
+--     vim.diagnostic.enable(false)
+--   end,
+-- })

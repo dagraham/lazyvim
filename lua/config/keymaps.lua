@@ -3,6 +3,10 @@
 -- Add any additional keymaps here
 local ls = require("luasnip")
 
+vim.keymap.set({ "n", "i", "v", "x", "s" }, "<C-s>", function()
+  vim.cmd("wa")
+end, { desc = "Write all files" })
+
 vim.keymap.set({ "i", "s" }, "<C-e>", function()
   if ls.expand_or_jumpable() then
     ls.expand_or_jump()
