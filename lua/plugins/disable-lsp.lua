@@ -1,3 +1,4 @@
+-- ~/.config/nvim/lua/plugins/disable-lsp.lua
 return {
   {
     "neovim/nvim-lspconfig",

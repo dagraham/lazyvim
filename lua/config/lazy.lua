@@ -113,7 +113,7 @@ require("lazy").setup({
         }
       end,
     },
-    { "williamboman/mason-lspconfig.nvim", version = "1.29.0" },
+    { "mason-org/mason-lspconfig.nvim" },
     { "tpope/vim-fugitive" },
     { "kdheepak/lazygit.nvim" },
     {
@@ -123,11 +123,11 @@ require("lazy").setup({
       -- use opts = {} for passing setup options
       -- this is equivalent to setup({}) function
     },
-    { "echasnovski/mini.nvim", version = false },
+    { "nvim-mini/mini.nvim", version = false },
     -- 🧩 Mini plugins
     {
       -- mini.files: lightweight file explorer
-      "echasnovski/mini.files",
+      "nvim-mini/mini.files",
       version = false,
       keys = {
         {
@@ -144,7 +144,7 @@ require("lazy").setup({
     },
     {
       -- mini.move: intuitive line and block movement
-      "echasnovski/mini.move",
+      "nvim-mini/mini.move",
       version = false,
       config = function()
         require("mini.move").setup({
@@ -181,9 +181,6 @@ require("lazy").setup({
     },
     {
       "nvim-treesitter/nvim-treesitter",
-      dependencies = {
-        "nvim-treesitter/playground",
-      },
       opts = {
         ensure_installed = {
           "markdown",
@@ -194,9 +191,10 @@ require("lazy").setup({
           enable = true,
           additional_vim_regex_highlighting = false,
         },
-        playground = {
-          enable = true,
-        },
+        -- Remove this block entirely:
+        -- playground = {
+        --   enable = true,
+        -- },
       },
     },
     -- {
@@ -230,7 +228,7 @@ require("lazy").setup({
     {
       "MeanderingProgrammer/render-markdown.nvim",
       event = "BufReadPre",
-      dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
+      dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-mini/mini.nvim" }, -- if you use the mini.nvim suite
       config = function()
         require("render-markdown").setup({
           heading = {
