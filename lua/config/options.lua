@@ -15,3 +15,7 @@ vim.o.foldlevel = 99
 vim.o.foldenable = true
 -- block in normal, 25% vertical bar in insert, thin horiz in replace
 vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
+-- Start with all Snacks animations off (for other UI bits)
+vim.g.snacks_animate = false
+-- Start Mini Animate disabled globally
+vim.g.minianimate_disable = true

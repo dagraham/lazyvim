@@ -1,9 +1,12 @@
-return {
-  { "echasnovski/mini.animate", enabled = false },
-  {
-    "folke/snacks.nvim",
-    opts = {
-      animate = { enabled = false },
-    },
-  },
-}
+-- ~/.config/nvim/lua/plugins/no_animate.lua
+-- return {
+--   { "echasnovski/mini.animate", enabled = false },
+--   {
+--     "folke/snacks.nvim",
+--     opts = {
+--       -- optional: also ensure smooth scrolling itself is disabled
+--       scroll = { enabled = false },
+--       animate = { enabled = false },
+--     },
+--   },
+-- }
